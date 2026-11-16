@@ -17,9 +17,6 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo */}
           <a href="#home" className="flex items-center gap-2.5 group">
-            <span className="w-9 h-9 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-lg shadow-sm group-hover:bg-indigo-700 transition">
-              ⚛
-            </span>
             <div>
               <span className="font-bold text-slate-900 tracking-tight block text-base leading-tight">
                 React API Calls
