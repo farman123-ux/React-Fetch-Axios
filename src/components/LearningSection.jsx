@@ -153,7 +153,6 @@ useEffect(() => {
 if (error) {
   return <div className="error-alert">Error: {error}</div>
 }`,
-      tip: 'Do not put try/catch around the function definition in useEffect. Put it inside the async function body so asynchronous promise errors are properly caught.',
     },
     {
       id: 'displaying-data',
@@ -179,7 +178,6 @@ if (error) {
     </div>
   )
 }`,
-      tip: 'Never use the array index as the key if the list can be reordered or filtered. Always prefer a persistent unique ID like user.id.',
     },
     {
       id: 'all-together',
@@ -226,7 +224,6 @@ if (error) {
     </ul>
   )
 }`,
-      tip: 'By handling all 3 states (loading, error, success), your application provides a smooth, bug-free experience on every device.',
     },
   ]
 
@@ -237,9 +234,7 @@ if (error) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-full">
-            Step-by-Step Curriculum
-          </span>
+          
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
             Learn the Fundamentals
           </h2>
@@ -310,9 +305,7 @@ if (error) {
                 {/* Code Window Header */}
                 <div className="px-4 py-2.5 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
-                    <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-                    <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                    
                     <span className="ml-2 text-xs font-mono text-slate-400">ExampleCode.jsx</span>
                   </div>
                   <button

@@ -9,9 +9,7 @@ export default function InteractiveExamples() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-full">
-            Hands-on Practice
-          </span>
+          
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
             Interactive Live Examples
           </h2>
@@ -30,7 +28,7 @@ export default function InteractiveExamples() {
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
-            <span>👥</span>
+           
             <span>1. Fetch API (Users)</span>
           </button>
           <button
@@ -41,7 +39,7 @@ export default function InteractiveExamples() {
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
-            <span>📝</span>
+           
             <span>2. Axios (Posts)</span>
           </button>
           <button
@@ -52,7 +50,7 @@ export default function InteractiveExamples() {
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
-            <span>⚙️</span>
+          
             <span>3. States & Error Simulator</span>
           </button>
         </div>
@@ -81,7 +79,7 @@ function FetchUsersDemo() {
     setError(null)
     try {
       const res = await fetch('https://jsonplaceholder.typicode.com/users')
-      if (!res.ok) {
+      if (!res) {
         throw new Error(`HTTP Error! status: ${res.status}`)
       }
       const data = await res.json()
@@ -129,9 +127,7 @@ function FetchUsersDemo() {
       {/* Demo Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 gap-4 mb-6">
         <div>
-          <div className="inline-block px-2.5 py-0.5 rounded bg-blue-100 text-blue-700 font-semibold text-xs mb-1">
-            Method: Native fetch()
-          </div>
+
           <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
             Fetch API Demo: User Directory
           </h3>
