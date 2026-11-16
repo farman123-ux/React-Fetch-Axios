@@ -259,9 +259,7 @@ function AxiosPostsDemo() {
       {/* Demo Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 gap-4 mb-6">
         <div>
-          <div className="inline-block px-2.5 py-0.5 rounded bg-purple-100 text-purple-700 font-semibold text-xs mb-1">
-            Method: axios.get()
-          </div>
+         
           <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
             Axios Demo: Blog Posts
           </h3>
@@ -376,7 +374,7 @@ function StatesSimulatorDemo() {
 
     try {
       // Artificially wait 2.5 seconds to clearly observe the loading state
-      await new Promise((resolve) => setTimeout(resolve, 2500))
+      await new Promise((resolve) => setTimeout(resolve, 1500))
       const res = await axios.get('https://jsonplaceholder.typicode.com/todos/2')
       setData(res.data)
     } catch (err) {
@@ -414,9 +412,7 @@ function StatesSimulatorDemo() {
     <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xs">
       {/* Demo Header */}
       <div className="pb-6 border-b border-slate-200 mb-6">
-        <div className="inline-block px-2.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold text-xs mb-1">
-          Interactive State Inspector
-        </div>
+       
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
           Loading & Error States Simulator
         </h3>
@@ -432,7 +428,7 @@ function StatesSimulatorDemo() {
           disabled={loading}
           className="p-3 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-xs transition flex flex-col items-center justify-center gap-1 cursor-pointer"
         >
-          <span>✅ Trigger Success</span>
+          <span>Trigger Success</span>
           <span className="text-[11px] font-normal text-emerald-100">Loads normal data</span>
         </button>
 
@@ -441,7 +437,7 @@ function StatesSimulatorDemo() {
           disabled={loading}
           className="p-3 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-xs transition flex flex-col items-center justify-center gap-1 cursor-pointer"
         >
-          <span>⏳ Simulate Slow Load</span>
+          <span>Simulate Slow Load</span>
           <span className="text-[11px] font-normal text-indigo-100">Adds 2.5s delay</span>
         </button>
 
@@ -450,7 +446,7 @@ function StatesSimulatorDemo() {
           disabled={loading}
           className="p-3 bg-rose-600 hover:bg-rose-700 disabled:opacity-50 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-xs transition flex flex-col items-center justify-center gap-1 cursor-pointer"
         >
-          <span>❌ Trigger 404 Error</span>
+          <span>Trigger 404 Error</span>
           <span className="text-[11px] font-normal text-rose-100">Calls broken URL</span>
         </button>
 
@@ -459,7 +455,7 @@ function StatesSimulatorDemo() {
           disabled={loading}
           className="p-3 bg-white border border-slate-300 hover:bg-slate-100 disabled:opacity-50 text-slate-700 rounded-xl text-xs sm:text-sm font-semibold shadow-xs transition flex flex-col items-center justify-center gap-1 cursor-pointer"
         >
-          <span>🔄 Reset Simulator</span>
+          <span>Reset Simulator</span>
           <span className="text-[11px] font-normal text-slate-500">Clear all states</span>
         </button>
       </div>
@@ -533,7 +529,6 @@ function StatesSimulatorDemo() {
           {error && !loading && (
             <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-800">
               <div className="flex items-center gap-2 font-bold text-sm mb-1">
-                <span>⚠️</span>
                 <span>2. Error State Active</span>
               </div>
               <p className="text-xs text-rose-700 leading-relaxed">{error}</p>
@@ -549,8 +544,7 @@ function StatesSimulatorDemo() {
           {data && !loading && !error && (
             <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900">
               <div className="flex items-center gap-2 font-bold text-sm mb-2 text-emerald-800">
-                <span>🎉</span>
-                <span>3. Success State Active</span>
+                <span> Success State Active</span>
               </div>
               <div className="bg-white p-3 rounded-lg border border-emerald-200 text-xs space-y-1">
                 <p><span className="font-semibold text-slate-700">Todo Item ID:</span> {data.id}</p>
