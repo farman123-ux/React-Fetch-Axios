@@ -2,12 +2,7 @@ export default function Hero() {
   return (
     <section id="home" className="pt-12 pb-16 sm:pt-16 sm:pb-20 bg-gradient-to-b from-white to-slate-50 border-b border-slate-200">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs sm:text-sm font-medium mb-6">
-          <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse"></span>
-          Beginner-Friendly React Guide & Interactive Sandbox
-        </div>
-
+       
         {/* Heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight sm:leading-tight">
           React API Calls <br className="hidden sm:inline" />
