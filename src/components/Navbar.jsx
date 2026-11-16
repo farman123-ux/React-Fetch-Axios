@@ -1,14 +1,14 @@
 import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Learn', href: '#learn' },
-    { label: 'Interactive Examples', href: '#examples' },
-    { label: 'Fetch vs Axios', href: '#compare' },
-    { label: 'About', href: '#about' },
+    { label: 'Home', to: '/' },
+    { label: 'Learn', to: '/learn' },
+    { label: 'Interactive Examples', to: '/examples' },
+    { label: 'Fetch vs Axios', to: '/compare' },
   ]
 
   return (
@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo */}
-          <a href="#home" className="flex items-center gap-2.5 group">
+          <Link to="/" className="flex items-center gap-2.5 group">
             <div>
               <span className="font-bold text-slate-900 tracking-tight block text-base leading-tight">
                 React API Calls
@@ -25,32 +25,38 @@ export default function Navbar() {
                 Learn by Doing
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 transition"
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) =>
+                  `px-3 py-1.5 rounded-lg text-sm font-medium transition ${
+                    isActive
+                      ? 'text-indigo-600 bg-indigo-50 font-semibold'
+                      : 'text-slate-600 hover:text-indigo-600 hover:bg-indigo-50'
+                  }`
+                }
               >
                 {link.label}
-              </a>
+              </NavLink>
             ))}
-            <a
-              href="#examples"
+            <Link
+              to="/examples"
               className="ml-3 px-3.5 py-1.5 rounded-lg text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 shadow-sm transition"
             >
               Try Live Demos
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none"
+              className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none cursor-pointer"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? (
@@ -70,22 +76,28 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div className="md:hidden py-3 border-t border-slate-200 space-y-1">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <NavLink
+                key={link.to}
+                to={link.to}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 transition"
+                className={({ isActive }) =>
+                  `block px-3 py-2 rounded-lg text-sm font-medium transition ${
+                    isActive
+                      ? 'text-indigo-600 bg-indigo-50 font-semibold'
+                      : 'text-slate-700 hover:text-indigo-600 hover:bg-indigo-50'
+                  }`
+                }
               >
                 {link.label}
-              </a>
+              </NavLink>
             ))}
-            <a
-              href="#examples"
+            <Link
+              to="/examples"
               onClick={() => setMobileMenuOpen(false)}
               className="block text-center mt-2 px-3 py-2 rounded-lg text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700"
             >
               Try Live Demos
-            </a>
+            </Link>
           </div>
         )}
       </div>

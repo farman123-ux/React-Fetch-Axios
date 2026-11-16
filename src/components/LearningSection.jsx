@@ -35,11 +35,10 @@ function UserList() {
 
   return <div>Component UI</div>
 }`,
-      tip: 'Always provide an empty dependency array [] to useEffect if you only want the API call to run once when the page loads.',
     },
     {
       id: 'fetch-api',
-      title: '2. Fetch API – Making GET Requests',
+      title: '2. Fetch API - Making GET Requests',
       badge: 'Built-in',
       description:
         'fetch() is built directly into modern web browsers. You do not need to install any external npm library to use it.',
@@ -65,7 +64,6 @@ function UserList() {
     console.error('Fetch failed:', error.message)
   }
 }`,
-      tip: 'Remember: response.json() is also asynchronous, so you must put "await" in front of response.json().',
     },
     {
       id: 'axios-api',
@@ -92,7 +90,6 @@ async function loadPosts() {
     console.error('Axios error:', error.message)
   }
 }`,
-      tip: 'With Axios, your data is always stored under response.data. You do not need to check response.ok manually.',
     },
     {
       id: 'loading-state',
@@ -123,7 +120,6 @@ async function fetchData() {
 if (loading) {
   return <div className="spinner">Loading your data...</div>
 }`,
-      tip: 'Using the "finally" block ensures setLoading(false) always executes, preventing your app from getting stuck on the loading screen forever.',
     },
     {
       id: 'error-handling',
@@ -234,7 +230,7 @@ if (error) {
     },
   ]
 
-  const currentTopic = topics.find((t) => t.id === activeTab) || topics[0]
+  const currentTopic = topics.find((t) => t.id === activeTab)
 
   return (
     <section id="learn" className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
@@ -264,7 +260,7 @@ if (error) {
                   : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
               }`}
             >
-              {topic.title.split('–')[0]}
+              {topic.title}
             </button>
           ))}
         </div>
@@ -305,13 +301,7 @@ if (error) {
               </ul>
 
               {/* Beginner Tip Callout Box */}
-              <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs sm:text-sm">
-                <div className="flex items-center gap-2 font-bold mb-1 text-amber-800">
-                  <span>💡</span>
-                  <span>Beginner Tip:</span>
-                </div>
-                <p className="leading-relaxed">{currentTopic.tip}</p>
-              </div>
+              
             </div>
 
             {/* Right: Code Example with Copy Button */}

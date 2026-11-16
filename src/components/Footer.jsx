@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const currentYear = new Date().getFullYear()
 
 export default function Footer() {
@@ -7,14 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 border-b border-slate-800">
           {/* Brand Info */}
           <div>
-            <div className="flex items-center gap-2 mb-3">
+            <Link to="/" className="flex items-center gap-2 mb-3 inline-flex">
               <span className="w-8 h-8 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-sm">
                 ⚛
               </span>
               <span className="font-bold text-white text-base">
                 React API Calls
               </span>
-            </div>
+            </Link>
             <p className="text-xs text-slate-400 leading-relaxed">
               An educational, beginner-friendly learning platform designed to teach the fundamentals of API integration, state management, and error handling in React.js.
             </p>
@@ -23,28 +25,28 @@ export default function Footer() {
           {/* Quick Learning Navigation */}
           <div>
             <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-3">
-              Core Topics
+              Navigation
             </h4>
             <ul className="space-y-1.5 text-xs">
               <li>
-                <a href="#learn" className="hover:text-indigo-400 transition">
-                  • What are API Calls in React?
-                </a>
+                <Link to="/" className="hover:text-indigo-400 transition">
+                  • Home & Curriculum
+                </Link>
               </li>
               <li>
-                <a href="#learn" className="hover:text-indigo-400 transition">
+                <Link to="/learn" className="hover:text-indigo-400 transition">
+                  • Learn Fundamentals
+                </Link>
+              </li>
+              <li>
+                <Link to="/examples" className="hover:text-indigo-400 transition">
+                  • Interactive Live Examples
+                </Link>
+              </li>
+              <li>
+                <Link to="/compare" className="hover:text-indigo-400 transition">
                   • Fetch API vs Axios
-                </a>
-              </li>
-              <li>
-                <a href="#learn" className="hover:text-indigo-400 transition">
-                  • Loading States with useState
-                </a>
-              </li>
-              <li>
-                <a href="#learn" className="hover:text-indigo-400 transition">
-                  • Error Handling with try...catch
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

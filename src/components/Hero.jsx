@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Hero() {
   return (
     <section id="home" className="pt-12 pb-16 sm:pt-16 sm:pb-20 bg-gradient-to-b from-white to-slate-50 border-b border-slate-200">
@@ -18,18 +20,18 @@ export default function Hero() {
 
         {/* Action Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-          <a
-            href="#learn"
-            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition"
+          <Link
+            to="/learn"
+            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition text-center"
           >
-            Start Learning &darr;
-          </a>
-          <a
-            href="#examples"
-            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white border border-slate-300 text-slate-700 font-semibold shadow-xs hover:bg-slate-50 hover:text-slate-900 transition"
+            Start Learning &rarr;
+          </Link>
+          <Link
+            to="/examples"
+            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white border border-slate-300 text-slate-700 font-semibold shadow-xs hover:bg-slate-50 hover:text-slate-900 transition text-center"
           >
             Try Live Examples &rarr;
-          </a>
+          </Link>
         </div>
 
         {/* Quick Highlights Pill Row */}
