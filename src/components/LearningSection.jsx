@@ -251,7 +251,7 @@ if (error) {
               onClick={() => setActiveTab(topic.id)}
               className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer ${
                 activeTab === topic.id
-                  ? 'bg-indigo-600 text-white shadow-sm'
+                  ? 'bg-emerald-600 text-white shadow-sm'
                   : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
               }`}
             >
@@ -263,9 +263,9 @@ if (error) {
         {/* Selected Topic Content Card */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
           {/* Card Header */}
-          <div className="p-6 sm:p-8 border-b border-slate-200 bg-gradient-to-r from-slate-900 to-indigo-950 text-white">
+          <div className="p-6 sm:p-8 border-b border-slate-200 bg-gradient-to-r from-slate-900 to-emerald-950 text-white">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
-              <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-500/30 text-indigo-200 border border-indigo-400/30">
+              <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-500/30 text-emerald-200 border border-emerald-400/30">
                 {currentTopic.badge}
               </span>
               <span className="text-xs text-slate-400">Topic {topics.indexOf(currentTopic) + 1} of {topics.length}</span>
@@ -287,7 +287,7 @@ if (error) {
               <ul className="space-y-3.5">
                 {currentTopic.explanation.map((item, index) => (
                   <li key={index} className="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                    <span className="w-5 h-5 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-200 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                    <span className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
                       {index + 1}
                     </span>
                     <span>{item}</span>
@@ -317,7 +317,7 @@ if (error) {
                 </div>
 
                 {/* Code Content */}
-                <pre className="p-4 sm:p-5 font-mono text-xs sm:text-sm text-indigo-100 overflow-x-auto leading-relaxed flex-1">
+                <pre className="p-4 sm:p-5 font-mono text-xs sm:text-sm text-emerald-100 overflow-x-auto leading-relaxed flex-1">
                   <code>{currentTopic.code}</code>
                 </pre>
               </div>

@@ -21,7 +21,7 @@ export default function Navbar() {
               <span className="font-bold text-slate-900 tracking-tight block text-base leading-tight">
                 React API Calls
               </span>
-              <span className="text-[11px] font-medium text-indigo-600 tracking-wide uppercase">
+              <span className="text-[11px] font-medium text-emerald-600 tracking-wide uppercase">
                 Learn by Doing
               </span>
             </div>
@@ -36,8 +36,8 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `px-3 py-1.5 rounded-lg text-sm font-medium transition ${
                     isActive
-                      ? 'text-indigo-600 bg-indigo-50 font-semibold'
-                      : 'text-slate-600 hover:text-indigo-600 hover:bg-indigo-50'
+                      ? 'text-emerald-600 bg-emerald-50 font-semibold'
+                      : 'text-slate-600 hover:text-emerald-600 hover:bg-emerald-50'
                   }`
                 }
               >
@@ -46,7 +46,7 @@ export default function Navbar() {
             ))}
             <Link
               to="/examples"
-              className="ml-3 px-3.5 py-1.5 rounded-lg text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 shadow-sm transition"
+              className="ml-3 px-3.5 py-1.5 rounded-lg text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm transition"
             >
               Try Live Demos
             </Link>
@@ -83,8 +83,8 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `block px-3 py-2 rounded-lg text-sm font-medium transition ${
                     isActive
-                      ? 'text-indigo-600 bg-indigo-50 font-semibold'
-                      : 'text-slate-700 hover:text-indigo-600 hover:bg-indigo-50'
+                      ? 'text-emerald-600 bg-emerald-50 font-semibold'
+                      : 'text-slate-700 hover:text-emerald-600 hover:bg-emerald-50'
                   }`
                 }
               >
@@ -94,7 +94,7 @@ export default function Navbar() {
             <Link
               to="/examples"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-center mt-2 px-3 py-2 rounded-lg text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700"
+              className="block text-center mt-2 px-3 py-2 rounded-lg text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700"
             >
               Try Live Demos
             </Link>

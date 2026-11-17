@@ -24,7 +24,7 @@ export default function InteractiveExamples() {
             onClick={() => setActiveDemo('fetch-users')}
             className={`w-full sm:w-auto px-5 py-2.5 rounded-xl text-sm font-semibold transition cursor-pointer flex items-center justify-center gap-2 ${
               activeDemo === 'fetch-users'
-                ? 'bg-indigo-600 text-white shadow-sm'
+                ? 'bg-emerald-600 text-white shadow-sm'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
@@ -35,7 +35,7 @@ export default function InteractiveExamples() {
             onClick={() => setActiveDemo('axios-posts')}
             className={`w-full sm:w-auto px-5 py-2.5 rounded-xl text-sm font-semibold transition cursor-pointer flex items-center justify-center gap-2 ${
               activeDemo === 'axios-posts'
-                ? 'bg-indigo-600 text-white shadow-sm'
+                ? 'bg-emerald-600 text-white shadow-sm'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
@@ -46,7 +46,7 @@ export default function InteractiveExamples() {
             onClick={() => setActiveDemo('states-simulator')}
             className={`w-full sm:w-auto px-5 py-2.5 rounded-xl text-sm font-semibold transition cursor-pointer flex items-center justify-center gap-2 ${
               activeDemo === 'states-simulator'
-                ? 'bg-indigo-600 text-white shadow-sm'
+                ? 'bg-emerald-600 text-white shadow-sm'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
@@ -138,7 +138,7 @@ function FetchUsersDemo() {
         <button
           onClick={refetchUsers}
           disabled={loading}
-          className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white text-sm font-semibold rounded-lg shadow-sm transition flex items-center justify-center gap-2 cursor-pointer self-start sm:self-auto"
+          className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:bg-emerald-400 text-white text-sm font-semibold rounded-lg shadow-sm transition flex items-center justify-center gap-2 cursor-pointer self-start sm:self-auto"
         >
           <svg className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -150,17 +150,17 @@ function FetchUsersDemo() {
       {/* Code Breakdown Pill */}
       <div className="bg-white p-3.5 rounded-xl border border-slate-200 text-xs text-slate-600 mb-6 flex flex-wrap items-center gap-x-4 gap-y-1">
         <span className="font-semibold text-slate-800">Key code in this demo:</span>
-        <code className="text-indigo-600 font-mono">const res = await fetch(...)</code>
+        <code className="text-emerald-600 font-mono">const res = await fetch(...)</code>
         <span>&rarr;</span>
-        <code className="text-indigo-600 font-mono">if (!res.ok) throw ...</code>
+        <code className="text-emerald-600 font-mono">if (!res.ok) throw ...</code>
         <span>&rarr;</span>
-        <code className="text-indigo-600 font-mono">const data = await res.json()</code>
+        <code className="text-emerald-600 font-mono">const data = await res.json()</code>
       </div>
 
       {/* States Render */}
       {loading && (
         <div className="py-16 text-center">
-          <div className="w-9 h-9 border-3 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+          <div className="w-9 h-9 border-3 border-emerald-600 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
           <p className="text-sm font-medium text-slate-600">Executing fetch() request...</p>
         </div>
       )}
@@ -182,10 +182,10 @@ function FetchUsersDemo() {
           {users.map((user) => (
             <div
               key={user.id}
-              className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs hover:border-indigo-300 transition"
+              className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs hover:border-emerald-300 transition"
             >
               <div className="flex items-center gap-3 mb-2.5">
-                <div className="w-9 h-9 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-sm">
+                <div className="w-9 h-9 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-sm">
                   {user.name.charAt(0)}
                 </div>
                 <div className="min-w-0">
@@ -435,10 +435,10 @@ function StatesSimulatorDemo() {
         <button
           onClick={handleSlowLoading}
           disabled={loading}
-          className="p-3 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-xs transition flex flex-col items-center justify-center gap-1 cursor-pointer"
+          className="p-3 bg-amber-600 hover:bg-amber-700 disabled:opacity-50 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-xs transition flex flex-col items-center justify-center gap-1 cursor-pointer"
         >
           <span>Simulate Slow Load</span>
-          <span className="text-[11px] font-normal text-indigo-100">Adds 2.5s delay</span>
+          <span className="text-[11px] font-normal text-amber-100">Adds 2.5s delay</span>
         </button>
 
         <button
@@ -468,7 +468,7 @@ function StatesSimulatorDemo() {
             <span className="text-slate-400 font-bold uppercase text-[10px] tracking-wider">
               Live React State Inspector
             </span>
-            <span className="px-2 py-0.5 rounded text-[10px] bg-indigo-900/60 text-indigo-300">
+            <span className="px-2 py-0.5 rounded text-[10px] bg-emerald-900/60 text-emerald-300">
               Scenario: {currentScenario}
             </span>
           </div>
@@ -499,7 +499,7 @@ function StatesSimulatorDemo() {
           {data && (
             <div className="mt-3 pt-3 border-t border-slate-800">
               <span className="text-slate-400 text-[10px] block mb-1">Payload Content:</span>
-              <pre className="text-indigo-200 text-[11px] bg-slate-950 p-2 rounded overflow-x-auto">
+              <pre className="text-emerald-200 text-[11px] bg-slate-950 p-2 rounded overflow-x-auto">
                 {JSON.stringify(data, null, 2)}
               </pre>
             </div>
@@ -520,7 +520,7 @@ function StatesSimulatorDemo() {
 
           {loading && (
             <div className="text-center py-8">
-              <div className="w-8 h-8 border-3 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
+              <div className="w-8 h-8 border-3 border-emerald-600 border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
               <p className="text-sm font-semibold text-slate-800">1. Loading State Active</p>
               <p className="text-xs text-slate-500">Showing spinner while waiting for server response...</p>
             </div>
