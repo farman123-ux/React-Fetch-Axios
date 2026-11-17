@@ -43,7 +43,6 @@ export default function FetchVsAxios() {
   return (
     <section id="compare" className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
             Fetch API vs Axios
@@ -53,9 +52,7 @@ export default function FetchVsAxios() {
           </p>
         </div>
 
-        {/* Side-by-Side Code Comparison */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {/* Fetch Box */}
           <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 text-white shadow-sm flex flex-col">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
               <div className="flex items-center gap-2">
@@ -66,15 +63,11 @@ export default function FetchVsAxios() {
               </span>
             </div>
             <pre className="font-mono text-xs text-emerald-100 overflow-x-auto leading-relaxed flex-1">
-              <code>{`// 1. Send request
-const res = await fetch(url)
-
-// 2. MUST manually check for errors
+              <code>{`const res = await fetch(url)
 if (!res.ok) {
   throw new Error('HTTP error ' + res.status)
 }
 
-// 3. MUST manually parse JSON
 const data = await res.json()
 setData(data)`}</code>
             </pre>
@@ -84,7 +77,6 @@ setData(data)`}</code>
             </div>
           </div>
 
-          {/* Axios Box */}
           <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 text-white shadow-sm flex flex-col">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
               <div className="flex items-center gap-2">
@@ -97,12 +89,7 @@ setData(data)`}</code>
             </div>
             <pre className="font-mono text-xs text-slate-100 overflow-x-auto leading-relaxed flex-1">
               <code>{`import axios from 'axios'
-
-// 1. One clean call
-// (Automatic JSON parsing + auto error throw)
 const res = await axios.get(url)
-
-// 2. Data is ready directly at res.data
 setData(res.data)`}</code>
             </pre>
             <div className="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400">
@@ -112,7 +99,6 @@ setData(res.data)`}</code>
           </div>
         </div>
 
-        {/* Comparison Table */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-sm">
@@ -147,7 +133,6 @@ setData(res.data)`}</code>
             </table>
           </div>
 
-          {/* Quick Recommendation Summary Banner */}
           <div className="p-5 sm:p-6 bg-emerald-50/70 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <h4 className="font-bold text-slate-900 text-sm">

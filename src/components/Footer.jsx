@@ -7,7 +7,6 @@ export default function Footer() {
     <footer id="about" className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-slate-800">
-          {/* Brand Info */}
           <div>
             <Link to="/" className="flex items-center gap-2 mb-3 inline-flex">
               
@@ -20,7 +19,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Learning Navigation */}
           <div>
             <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-3">
               Navigation
@@ -49,7 +47,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Project Details */}
           <div>
             <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-3">
               About This Project
@@ -65,7 +62,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
           <p>© {currentYear} React API Calls – Learn by Doing. All rights reserved.</p>
         </div>

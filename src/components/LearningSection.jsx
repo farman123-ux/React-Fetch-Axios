@@ -22,15 +22,12 @@ export default function LearningSection() {
         'To get dynamic data, React makes an HTTP request (like a GET request) to an API endpoint.',
         'Because fetching data takes time (asynchronous), we run the request inside the useEffect hook so it executes after the component renders, without blocking the screen.',
       ],
-      code: `// Why useEffect? It runs side-effects like API fetching!
-import { useEffect, useState } from 'react'
+      code: `import { useEffect, useState } from 'react'
 
 function UserList() {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    // 1. Fetch runs once when the component mounts
-    // 2. The empty array [] prevents an infinite loop!
   }, [])
 
   return <div>Component UI</div>
@@ -48,17 +45,14 @@ function UserList() {
         'Step 3: Call await response.json() to parse the JSON string into JavaScript objects.',
       ],
       code: `async function loadUsers() {
-  try {
-    // 1. Send the GET request
-    const response = await fetch('https://jsonplaceholder.typicode.com/users')
+      try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
 
-    // 2. IMPORTANT: Check if request was successful (200-299 status)
-    if (!response.ok) {
-      throw new Error(\`HTTP error! status: \${response.status}\`)
-    }
+        if (!response.ok) {
+          throw new Error(\`HTTP error! status: \${response.status}\`)
+        }
 
-    // 3. Parse JSON body
-    const data = await response.json()
+        const data = await response.json()
     setUsers(data)
   } catch (error) {
     console.error('Fetch failed:', error.message)
@@ -80,13 +74,10 @@ function UserList() {
 
 async function loadPosts() {
   try {
-    // 1. Axios handles the request and parses JSON automatically
     const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
 
-    // 2. The result is directly in response.data
     setPosts(response.data)
   } catch (error) {
-    // Axios automatically catches 4xx and 5xx HTTP errors
     console.error('Axios error:', error.message)
   }
 }`,
@@ -105,18 +96,17 @@ async function loadPosts() {
       code: `const [loading, setLoading] = useState(true)
 
 async function fetchData() {
-  setLoading(true) // Start loading
+  setLoading(true)
   try {
     const res = await axios.get('/api/items')
     setItems(res.data)
   } catch (err) {
     setError(err.message)
   } finally {
-    setLoading(false) // Always stops loading (success or error)
+    setLoading(false)
   }
 }
 
-// In your JSX:
 if (loading) {
   return <div className="spinner">Loading your data...</div>
 }`,
@@ -137,11 +127,10 @@ if (loading) {
 useEffect(() => {
   async function getData() {
     try {
-      setError(null) // Reset any previous error
+      setError(null)
       const res = await axios.get('https://api.example.com/data')
       setData(res.data)
     } catch (err) {
-      // Save readable error message to display in UI
       setError(err.message || 'Failed to fetch data')
     }
   }
@@ -149,7 +138,6 @@ useEffect(() => {
   getData()
 }, [])
 
-// In your JSX:
 if (error) {
   return <div className="error-alert">Error: {error}</div>
 }`,
@@ -169,7 +157,6 @@ if (error) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {users.map((user) => (
-        // KEY PROP IS REQUIRED:
         <div key={user.id} className="p-4 border rounded-lg">
           <h3 className="font-bold">{user.name}</h3>
           <p className="text-gray-600">{user.email}</p>
@@ -211,13 +198,10 @@ if (error) {
     load()
   }, [])
 
-  // 1. Loading UI
   if (loading) return <p>Loading data...</p>
 
-  // 2. Error UI
   if (error) return <p className="text-red-500">Error: {error}</p>
 
-  // 3. Success UI
   return (
     <ul>
       {data.map(item => <li key={item.id}>{item.name}</li>)}
@@ -232,7 +216,6 @@ if (error) {
   return (
     <section id="learn" className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
@@ -243,7 +226,6 @@ if (error) {
           </p>
         </div>
 
-        {/* Topic Selector Tabs */}
         <div className="flex flex-wrap gap-2 justify-center mb-8">
           {topics.map((topic) => (
             <button
@@ -260,9 +242,7 @@ if (error) {
           ))}
         </div>
 
-        {/* Selected Topic Content Card */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          {/* Card Header */}
           <div className="p-6 sm:p-8 border-b border-slate-200 bg-gradient-to-r from-slate-900 to-emerald-950 text-white">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
               <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-500/30 text-emerald-200 border border-emerald-400/30">
@@ -279,7 +259,6 @@ if (error) {
           </div>
 
           <div className="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
-            {/* Left: Key Bullet Points */}
             <div className="lg:col-span-5 space-y-6">
               <h4 className="text-base font-bold text-slate-900 uppercase tracking-wide text-xs">
                 Key Concepts to Remember:
@@ -295,14 +274,10 @@ if (error) {
                 ))}
               </ul>
 
-              {/* Beginner Tip Callout Box */}
-              
             </div>
 
-            {/* Right: Code Example with Copy Button */}
             <div className="lg:col-span-7">
               <div className="rounded-xl bg-slate-900 border border-slate-800 overflow-hidden shadow-inner flex flex-col h-full">
-                {/* Code Window Header */}
                 <div className="px-4 py-2.5 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
                     
@@ -316,7 +291,6 @@ if (error) {
                   </button>
                 </div>
 
-                {/* Code Content */}
                 <pre className="p-4 sm:p-5 font-mono text-xs sm:text-sm text-emerald-100 overflow-x-auto leading-relaxed flex-1">
                   <code>{currentTopic.code}</code>
                 </pre>

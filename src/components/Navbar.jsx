@@ -15,7 +15,6 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-2.5 group">
             <div>
               <span className="font-bold text-slate-900 tracking-tight block text-base leading-tight">
@@ -27,7 +26,6 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {navLinks.map((link) => (
               <NavLink
@@ -52,7 +50,6 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* Mobile Menu Button */}
           <div className="flex md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -72,7 +69,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation Dropdown */}
         {mobileMenuOpen && (
           <div className="md:hidden py-3 border-t border-slate-200 space-y-1">
             {navLinks.map((link) => (

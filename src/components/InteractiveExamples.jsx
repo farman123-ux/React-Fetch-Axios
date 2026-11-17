@@ -7,7 +7,6 @@ export default function InteractiveExamples() {
   return (
     <section id="examples" className="py-16 sm:py-20 bg-white border-b border-slate-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
@@ -18,7 +17,6 @@ export default function InteractiveExamples() {
           </p>
         </div>
 
-        {/* Demo Selector Tabs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
           <button
             onClick={() => setActiveDemo('fetch-users')}
@@ -55,7 +53,6 @@ export default function InteractiveExamples() {
           </button>
         </div>
 
-        {/* Active Demo Container */}
         <div>
           {activeDemo === 'fetch-users' && <FetchUsersDemo />}
           {activeDemo === 'axios-posts' && <AxiosPostsDemo />}
@@ -66,9 +63,6 @@ export default function InteractiveExamples() {
   )
 }
 
-/* =========================================================================
-   DEMO 1: Fetch API – Users from JSONPlaceholder
-   ========================================================================= */
 function FetchUsersDemo() {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true)
@@ -124,7 +118,6 @@ function FetchUsersDemo() {
 
   return (
     <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xs">
-      {/* Demo Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 gap-4 mb-6">
         <div>
 
@@ -147,7 +140,6 @@ function FetchUsersDemo() {
         </button>
       </div>
 
-      {/* Code Breakdown Pill */}
       <div className="bg-white p-3.5 rounded-xl border border-slate-200 text-xs text-slate-600 mb-6 flex flex-wrap items-center gap-x-4 gap-y-1">
         <span className="font-semibold text-slate-800">Key code in this demo:</span>
         <code className="text-emerald-600 font-mono">const res = await fetch(...)</code>
@@ -157,7 +149,6 @@ function FetchUsersDemo() {
         <code className="text-emerald-600 font-mono">const data = await res.json()</code>
       </div>
 
-      {/* States Render */}
       {loading && (
         <div className="py-16 text-center">
           <div className="w-9 h-9 border-3 border-emerald-600 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
@@ -206,9 +197,6 @@ function FetchUsersDemo() {
   )
 }
 
-/* =========================================================================
-   DEMO 2: Axios – Posts from JSONPlaceholder
-   ========================================================================= */
 function AxiosPostsDemo() {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -256,7 +244,6 @@ function AxiosPostsDemo() {
 
   return (
     <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xs">
-      {/* Demo Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 gap-4 mb-6">
         <div>
          
@@ -279,7 +266,6 @@ function AxiosPostsDemo() {
         </button>
       </div>
 
-      {/* Code Breakdown Pill */}
       <div className="bg-white p-3.5 rounded-xl border border-slate-200 text-xs text-slate-600 mb-6 flex flex-wrap items-center gap-x-4 gap-y-1">
         <span className="font-semibold text-slate-800">Key code in this demo:</span>
         <code className="text-purple-600 font-mono">import axios from 'axios'</code>
@@ -289,7 +275,6 @@ function AxiosPostsDemo() {
         <code className="text-purple-600 font-mono">setPosts(res.data)</code>
       </div>
 
-      {/* States Render */}
       {loading && (
         <div className="py-16 text-center">
           <div className="w-9 h-9 border-3 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
@@ -339,16 +324,12 @@ function AxiosPostsDemo() {
   )
 }
 
-/* =========================================================================
-   DEMO 3: Loading & Error States Simulator
-   ========================================================================= */
 function StatesSimulatorDemo() {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [currentScenario, setCurrentScenario] = useState('idle')
 
-  // Scenario 1: Successful Fetch
   const handleSuccess = async () => {
     setCurrentScenario('success')
     setLoading(true)
@@ -365,7 +346,6 @@ function StatesSimulatorDemo() {
     }
   }
 
-  // Scenario 2: Simulated Slow Loading (2-second delay)
   const handleSlowLoading = async () => {
     setCurrentScenario('slow-load')
     setLoading(true)
@@ -373,7 +353,6 @@ function StatesSimulatorDemo() {
     setData(null)
 
     try {
-      // Artificially wait 2.5 seconds to clearly observe the loading state
       await new Promise((resolve) => setTimeout(resolve, 1500))
       const res = await axios.get('https://jsonplaceholder.typicode.com/todos/2')
       setData(res.data)
@@ -384,7 +363,6 @@ function StatesSimulatorDemo() {
     }
   }
 
-  // Scenario 3: Trigger Real 404 Error
   const handleError = async () => {
     setCurrentScenario('error')
     setLoading(true)
@@ -392,7 +370,6 @@ function StatesSimulatorDemo() {
     setData(null)
 
     try {
-      // Requesting an endpoint that doesn't exist triggers an error
       await axios.get('https://jsonplaceholder.typicode.com/invalid-nonexistent-url-404')
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Request failed with status code 404')
@@ -410,7 +387,6 @@ function StatesSimulatorDemo() {
 
   return (
     <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xs">
-      {/* Demo Header */}
       <div className="pb-6 border-b border-slate-200 mb-6">
        
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
@@ -421,7 +397,6 @@ function StatesSimulatorDemo() {
         </p>
       </div>
 
-      {/* Control Buttons */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-6">
         <button
           onClick={handleSuccess}
@@ -460,9 +435,7 @@ function StatesSimulatorDemo() {
         </button>
       </div>
 
-      {/* State Inspector & Live UI Result */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Left: Live State Inspector (Debugger) */}
         <div className="lg:col-span-5 bg-slate-900 rounded-xl p-4 text-white font-mono text-xs border border-slate-800">
           <div className="flex items-center justify-between pb-2 border-b border-slate-800 mb-3">
             <span className="text-slate-400 font-bold uppercase text-[10px] tracking-wider">
@@ -506,7 +479,6 @@ function StatesSimulatorDemo() {
           )}
         </div>
 
-        {/* Right: Rendered User Interface (What the User Sees) */}
         <div className="lg:col-span-7 bg-white rounded-xl p-6 border border-slate-200 flex flex-col justify-center min-h-[220px]">
           <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-3">
             Rendered Component Output:

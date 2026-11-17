@@ -5,7 +5,6 @@ export default function Hero() {
     <section id="home" className="pt-12 pb-16 sm:pt-16 sm:pb-20 bg-gradient-to-b from-white to-slate-50 border-b border-slate-200">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
        
-        {/* Heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight sm:leading-tight">
           React API Calls <br className="hidden sm:inline" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
@@ -13,12 +12,10 @@ export default function Hero() {
           </span>
         </h1>
 
-        {/* Subtitle */}
         <p className="mt-5 max-w-2xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed">
           Master how to fetch real-world data in React using the native <span className="font-semibold text-slate-800">Fetch API</span> and <span className="font-semibold text-slate-800">Axios</span>. Learn loading states, error handling, and component rendering with clear explanations and live demos.
         </p>
 
-        {/* Action Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
           <Link
             to="/learn"
@@ -34,7 +31,6 @@ export default function Hero() {
           </Link>
         </div>
 
-        {/* Quick Highlights Pill Row */}
         <div className="mt-12 pt-8 border-t border-slate-200/80 grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
           <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
             <div className="text-xs font-semibold uppercase text-emerald-600">Step 1</div>
